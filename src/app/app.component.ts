@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  deleted: boolean = false;
+  state: string = 'delete';
+  test: string = 'Starting value';
+  boundValue: number = 1000;
+
+  private changeState() {
+    this.deleted = !this.deleted;
+    if(this.deleted == false) {
+      this.state = 'delete';
+    }
+    else {
+      this.state = 'add';
+    }
+  }
 }
